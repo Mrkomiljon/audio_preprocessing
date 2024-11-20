@@ -1,4 +1,3 @@
-# I tested this code sample on LibriSeVoc dataset.
 import pandas as pd
 import numpy as np
 import torch
@@ -59,7 +58,7 @@ samples_weights = np.array([weights[t] for t in y_train.numpy()])
 sampler = WeightedRandomSampler(samples_weights, len(samples_weights))
 
 batch_size = 64
-num_workers = 4
+num_workers = 8
 
 train_loader = DataLoader(
     train_dataset, batch_size=batch_size, sampler=sampler, num_workers=num_workers, pin_memory=True, prefetch_factor=2
